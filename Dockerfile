@@ -1,6 +1,6 @@
 
-#export HASHCAT_VERSION=hashcat-6.2.6
-#export HASHCAT_UTILS_VERSION=1.9
+export HASHCAT_VERSION=hashcat-6.2.6
+export HASHCAT_UTILS_VERSION=1.9
 
   sudo apt update && \
     sudo apt install -y --no-install-recommends \
