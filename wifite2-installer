@@ -7,7 +7,7 @@ export HASHCAT_UTILS_VERSION=1.9
         clang ca-certificates gcc openssl make kmod nano wget p7zip-full build-essential \
         libsqlite3-dev libpcap0.8-dev libpcap-dev sqlite3 pkg-config libnl-genl-3-dev \
         libssl-dev net-tools iw ethtool usbutils pciutils wireless-tools git curl libcurl3-dev unzip \
-        macchanger tshark rfkill autoconf automake libtool && \
+        macchanger tshark rfkill autoconf automake libtool hwloc libstdc++-dev&& \
     sudo apt build-dep -y aircrack-ng && \
     sudo apt clean && \
     #sudo rm -rf /var/lib/apt/lists/*
