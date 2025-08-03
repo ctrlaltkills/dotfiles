@@ -11,7 +11,7 @@ export HASHCAT_UTILS_VERSION=1.9
     sudo apt build-dep -y aircrack-ng && \
     sudo apt clean && \
     #sudo rm -rf /var/lib/apt/lists/*
-
+cd ~/src
 # Install Aircrack from Source
 wget https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz
 tar xzvf aircrack-ng-1.7.tar.gz
@@ -20,7 +20,7 @@ cd ~/src/aircrack-ng-1.7/
     ./configure --with-experimental
     make
     sudo make install
-    airodump-ng-oui-update
+    sudo airodump-ng-oui-update
 
 # Workdir /
 cd ~/src
