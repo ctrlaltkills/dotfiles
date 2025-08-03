@@ -1,6 +1,6 @@
 
-#export HASHCAT_VERSION=hashcat-6.2.6
-#export HASHCAT_UTILS_VERSION=1.9
+export HASHCAT_VERSION=hashcat-6.2.6
+export HASHCAT_UTILS_VERSION=1.9
 
   sudo apt update && \
     sudo apt install -y --no-install-recommends \
@@ -12,7 +12,11 @@
     sudo apt clean && \
     #sudo rm -rf /var/lib/apt/lists/*
 
-# Install Aircrack from Source
+read -p "Press any key to continue.."
+
+cd ~/src
+
+
 wget https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz
 tar xzvf aircrack-ng-1.7.tar.gz
 cd ~/src/aircrack-ng-1.7/
@@ -20,52 +24,60 @@ cd ~/src/aircrack-ng-1.7/
     ./configure --with-experimental
     make
     sudo make install
-    airodump-ng-oui-update
+     sudo airodump-ng-oui-update
 
-# Workdir /
+
+read -p "Press any key to continue.."
+
 cd ~/src
 
-# Install wps-pixie
+
 git clone https://github.com/wiire/pixiewps
  cd pixiewps/
  make
 sudo make install
 
-# Workdir /
+
+read -p "Press any key to continue.."
+
 cd ~/src
 
-# Install hcxdump
+
 git clone https://github.com/ZerBea/hcxdumptool.git
 cd hcxdumptool/
  make
 sudo  make install
 
-# Workdir /
+
+read -p "Press any key to continue.."
+
 cd ~/src
 
-# Install hcxtools
 git clone https://github.com/ZerBea/hcxtools.git
 cd hcxtools/
 make
 sudo make install
 
-# Workdir /
+
+read -p "Press any key to continue.."
+
 cd ~/src
 
-# Install bully
+
 git clone https://github.com/kimocoder/bully
 cd  bully/src/
 make
 sudo make install
 
-# Workdir /
+
+read -p "Press any key to continue.."
+
 cd ~/src
 
 
-# Install and configure hashcat
 mkdir hashcat
 cd hashcat  && \
-# Install and configure hashcat: it's either the latest release or in legacy files
+
 
     wget --no-check-certificate https://hashcat.net/files/${HASHCAT_VERSION}.7z && \
     7zr x ${HASHCAT_VERSION}.7z && \
@@ -76,34 +88,35 @@ cd ~/src/hashcat && \
     7zr x hashcat-utils-${HASHCAT_UTILS_VERSION}.7z && \
     rm hashcat-utils-${HASHCAT_UTILS_VERSION}.7z
 
-# Add link for binary
 sudo ln -s /hashcat/${HASHCAT_VERSION}/hashcat64.bin /usr/bin/hashcat
 sudo ln -s /hashcat/hashcat-utils-${HASHCAT_UTILS_VERSION}/bin/cap2hccapx.bin /usr/bin/cap2hccapx
+read -p "Press any key to continue.."
 
-# Workdir /
 cd ~/src
 
-# Install reaver
+
 git clone https://github.com/t6x/reaver-wps-fork-t6x
 cd reaver-wps-fork-t6x/src/
  ./configure
 make
 sudo make install
 
-# Workdir /
+read -p "Press any key to continue.."
+
 cd ~/src
 
-# Install cowpatty
+
 git clone https://github.com/joswr1ght/cowpatty
 cd cowpatty/
 make
 
+read -p "Press any key to continue.."
 # Workdir /
 cd ~/src
 
-# Install wifite
 git clone https://github.com/kimocoder/wifite2.git
 chmod -R 777 wifite2/
 cd ~/src/
 sudo apt install rfkill -y
 
+read -p "Press any key to continue.."
